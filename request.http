@@ -1,0 +1,40 @@
+@host = http://localhost:3000
+###
+
+GET {{host}}/
+###
+
+GET {{host}}/api/tareas
+###
+
+GET {{host}}/api/tareas/1
+###
+
+POST {{host}}/api/tareas
+Content-Type: application/json
+
+{
+    "titulo": "Nueva tarea",
+    "completada": false
+}
+###
+
+PUT {{host}}/api/tareas/1
+Content-Type: application/json
+
+{
+    "titulo": "Tarea actualizada",
+    "completada": true
+}
+###
+
+PATCH {{host}}/api/tareas/1
+Content-Type: application/json
+
+{
+    "completada": false
+}
+###
+
+DELETE {{host}}/api/tareas/3
+###
