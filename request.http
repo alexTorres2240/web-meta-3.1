@@ -4,6 +4,9 @@
 GET {{host}}/
 ###
 
+GET {{host}}/api/tareas?formato=text
+###
+
 GET {{host}}/api/tareas
 ###
 

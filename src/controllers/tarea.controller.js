@@ -4,6 +4,13 @@ import * as tareaModel from '../models/tarea.model.js'
 const obtenerTodas = (req, res) => {
     try {
         const tareas = tareaModel.obtenerTodas();
+        const { formato } = req.query;
+
+        if (formato === 'text') {
+            const texto = tareas.map(t => `${t.id}. [${t.completada ? 'x' : ' '}] ${t.titulo}`).join('\n')
+            return res.type('text/plain').send(text || 'No hay tareas.');
+        }
+
         res.json({
             success: true,
             message: tareas,
