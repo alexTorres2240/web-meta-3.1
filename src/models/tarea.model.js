@@ -76,7 +76,7 @@ const eliminar = (id) => {
 };
 
 // Exportar todas las funciones del modelo
-module.exports = {
+export {
     obtenerTodas,
     obtenerPorId,
     crear,

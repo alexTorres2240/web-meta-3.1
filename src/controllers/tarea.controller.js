@@ -1,9 +1,4 @@
-/**
- * Controlador de Tareas
- * Maneja las peticiones HTTP y responde con JSON
- */
-
-const tareaModel = require('../models/tarea.model');
+import * as tareaModel from '../models/tarea.model.js'
 
 // GET /api/tareas - Obtener todas las tareas
 const obtenerTodas = (req, res) => {
@@ -214,7 +209,7 @@ const eliminar = (req, res) => {
 };
 
 // Exportar todos los métodos del controlador
-module.exports = {
+export {
     obtenerTodas,
     obtenerPorId,
     crear,

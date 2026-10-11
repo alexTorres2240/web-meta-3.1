@@ -1,10 +1,5 @@
-/**
- * Rutas de Tareas
- * Define los endpoints de la API
- */
-
-const express = require('express');
-const tareaController = require('../controllers/tarea.controller');
+import express from 'express';
+import * as tareaController from '../controllers/tarea.controller.js';
 
 const router = express.Router();
 
@@ -26,4 +21,4 @@ router.patch('/:id', tareaController.actualizarParcial);
 // DELETE /api/tareas/:id - Eliminar una tarea
 router.delete('/:id', tareaController.eliminar);
 
-module.exports = router;
+export default router;
