@@ -36,5 +36,14 @@ Content-Type: application/json
 }
 ###
 
+GET {{host}}/api/tareas/buscar?q=express
+###
+
+GET {{host}}/api/tareas/buscar?q=EXPRESS
+###
+
+GET {{host}}/api/tareas/buscar
+###
+
 DELETE {{host}}/api/tareas/3
 ###

@@ -172,6 +172,34 @@ const actualizarParcial = (req, res) => {
     }
 };
 
+// GET /api/tareas/buscar?q=text - Buscar tarea por titulo
+const buscarPorTitulo = (req, res) => {
+    try {
+        const { q } = req.query;
+
+        if (typeof q !== 'string' || !q.trim()) {
+            return res.status(400).json({
+                succes: false,
+                message: 'El parámetro "q" es requerido.'
+            });
+        }
+
+        const resultados = tareaModel.buscarPorTitulo(q.trim());
+
+        res.json({
+            success: true,
+            data: resultados,
+            count: resultados.length
+        });
+    } catch (error) {
+        res.status(500).json({
+            succes: false,
+            message: 'Error al buscar las tareas.',
+            error: error.message
+        });
+    }
+};
+
 // DELETE /api/tareas/:id - Eliminar una tarea
 const eliminar = (req, res) => {
     try {
@@ -215,5 +243,6 @@ export {
     crear,
     actualizarCompleta,
     actualizarParcial,
+    buscarPorTitulo,
     eliminar
 };

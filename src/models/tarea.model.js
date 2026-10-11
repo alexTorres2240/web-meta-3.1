@@ -63,6 +63,11 @@ const actualizarParcial = (id, datosParciales) => {
     return tareas[indice];
 };
 
+const buscarPorTitulo = (termino) => {
+    const busqueda = termino.toLowerCase();
+    return tareas.filter(t => t.titulo.toLowerCase().includes(busqueda));
+};
+
 // Eliminar una tarea
 const eliminar = (id) => {
     const indice = tareas.findIndex(t => t.id === id);
@@ -82,5 +87,6 @@ export {
     crear,
     actualizarCompleta,
     actualizarParcial,
+    buscarPorTitulo,
     eliminar
 };
